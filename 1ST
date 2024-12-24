@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinelac Autoproducts</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: transparent; /* Fully transparent */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left:0;
+            width:100% ;
+            z-index: 1000;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .navbar .logo a {
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Logo Styling */
+        .navbar .logo img {
+            max-height: 50px; /* Adjust this value as needed */
+            height: auto;
+        }
+
+        /* Navbar Menu Styling */
+        .navbar .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar .menu a {
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .menu a:hover {
+            color: #000000;
+        }
+
+        .navbar .menu a.active {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* Fullscreen Hero Section */
+        /* Fullscreen Hero Section */
+
+
+/* Remove the margin and padding from the body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background: url('E:/SAP/Untitled design (1).png') no-repeat center center;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5); /*background transprencey*/
+    opacity:0.8;
+    margin-top: 0; /* Ensure no margin from the top */
+    padding-top: 0; /* Ensure no padding from the top */
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('E:/SAP/Untitled design (1).png') no-repeat center center;
+    background-size: cover;
+    opacity: 2; /* Set transparency for the background image */
+    z-index: -1; /* Place the background behind the content */
+}
+
+        #home h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        #home p {
+            font-size: 24px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        /* About Us Section */
+        #about_us {
+            padding: 50px 30px;
+            background-color: #f9f9f9;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1 1 60%;
+            color: #333;
+            line-height: 1.6;
+            text-align: left;
+            padding-right: 15px;
+        }
+
+        .about-text h2 {
+            font-size: 28px;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-text ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .about-text ul li {
+            margin-bottom: 10px;
+        }
+
+        .about-image {
+            flex: 1 1 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Products Section */
+        #products {
+            padding: 50px 30px;
+            background-color: #fff;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 15px;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #000;
+        }
+
+        /* Branch Section */
+        #branches {
+            padding: 50px 30px;
+            background-color: #f9f9f9;
+        }
+
+        .branch-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .branch {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .branch iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+        }
+
+        .branch p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Responsive Navbar for Mobile */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .menu a {
+                margin: 10px 0;
+            }
+
+            .navbar .menu.active {
+                display: flex;
+            }
+
+            #home h1 {
+                font-size: 32px;
+            }
+
+            #home p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="#"><img src="E:/SAP/SAP.png.png" alt="Shinelac Logo"></a>
+    </div>
+    <div class="menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#about_us">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#branches">Branches</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- Fullscreen Hero Section -->
+<section id="home">
+    <h1>Welcome to Shinelac Auto Products</h1>
+    <p>Your trusted destination for premium automobile paints.</p>
+</section>
+
+<!-- About Us Section -->
+<section id="about_us">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Welcome to Shinelac Autoproducts, your trusted destination for premium automobile paints! With a legacy of quality and service, we specialize in providing top-notch paints for all your automobile needs. Our extensive range of products is designed to ensure that your vehicles look as stunning as the day they were first driven.</p>
+            <p>Established with the vision of offering the best to our customers, Shinelac Autoproducts is now proud to have its operations spread across three branches, bringing quality and expertise closer to you.</p>
+            <p>At Shinelac Autoproducts, we strive for:</p>
+            <ul>
+                <li>A wide range of high-quality automobile paints.</li>
+                <li>Personalized service to meet your specific needs.</li>
+                <li>Customer satisfaction through competitive pricing and expert advice.</li>
+            </ul>
+            <p>Thanks for choosing Shinelac Autoproducts. We look forward to serving you and keeping your vehicles vibrant and beautiful!</p>
+            <p>Visit us today and experience the Shinelac difference!</p>
+        </div>
+        <div class="about-image">
+            <img src="E:/SAP/Untitled design.png" alt="About Shinelac">
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="products-container">
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Paint Bucket">
+            <h3>Premium Paint Bucket</h3>
+            <p>$25.99</p>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Spray Paint">
+            <h3>Spray Paint</h3>
+            <p>$15.99</p>
+        </div>
+    </div>
+</section>
+
+<!-- Branch Section -->
+<section id="branches">
+    <h2>Our Branches</h2>
+    <div class="branch-container">
+        <div class="branch">
+            <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
+            <p><strong>Branch 1:</strong> Chennai, Tamil Nadu</p>
+        </div>
+        <div class="branch">
+            <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
+            <p><strong>Branch 2:</strong> Bengaluru, Karnataka</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector('.navbar');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > lastScrollY) {
+                navbar.style.transform = 'translateY(-100%)'; // Hide navbar on scroll down
+            } else {
+                navbar.style.transform = 'translateY(0)'; // Show navbar on scroll up
+            }
+
+            lastScrollY = window.scrollY;
+        });
+    });
+</script>
+
+</body>
+</html>
